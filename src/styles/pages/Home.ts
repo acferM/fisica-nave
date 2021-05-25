@@ -48,6 +48,38 @@ export const Header = styled.header`
       }
     }
   }
+
+  @media (max-width: 1500px) {
+    padding-right: 7.5rem;
+  }
+
+  @media (max-width: 1440px) {
+    padding-right: 6rem;
+  }
+
+  @media (max-width: 1360px) {
+    padding-right: 2.5rem;
+
+    nav {
+      max-width: 30rem;
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 1220px) {
+    padding-right: 1.5rem;
+
+    nav {
+      max-width: 26.25rem;
+
+      p {
+        font-size: 0.975rem;
+      }
+    }
+  }
 `;
 
 export const SchoolContent = styled.section`
