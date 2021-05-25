@@ -11,7 +11,7 @@ export const fonts = {
   title: `
   font-family: lato;
   font-weight: bold;
-  font-size: 3.6rem;
+  font-size: 3.375rem;
   line-height: 3.1875rem;
   `,
   subtitle: `

@@ -97,6 +97,35 @@ export const SchoolContent = styled.section`
   img {
     width: 50%;
   }
+
+  @media (max-width: 1500px) {
+    main {
+      max-width: 35rem;
+    }
+  }
+
+  @media (max-width: 1360px) {
+    img {
+      width: 45%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    main {
+      max-width: 33.75rem;
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      div {
+        button {
+          font-size: 0.75rem;
+          width: 15rem;
+        }
+      }
+    }
+  }
 `;
 
 export const CarouselWrapper = styled.div`
