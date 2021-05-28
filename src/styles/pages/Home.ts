@@ -26,8 +26,10 @@ export const Header = styled.header`
     width: 100%;
     max-width: 32.5rem;
 
-    p {
+    a {
+      text-decoration: none;
       ${fonts.text}
+      color: #000;
       position: relative;
 
       &::after {
@@ -63,7 +65,7 @@ export const Header = styled.header`
     nav {
       max-width: 30rem;
 
-      p {
+      a {
         font-size: 1rem;
       }
     }
@@ -75,7 +77,7 @@ export const Header = styled.header`
     nav {
       max-width: 26.25rem;
 
-      p {
+      a {
         font-size: 0.975rem;
       }
     }
@@ -157,59 +159,5 @@ export const SchoolContent = styled.section`
         }
       }
     }
-  }
-`;
-
-export const CarouselWrapper = styled.div`
-  margin-top: 3.375rem;
-  width: 100%;
-  position: relative;
-
-  button {
-    background: ${colors.green.dark};
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    border: 0;
-    border-radius: 50%;
-    width: 3.375rem;
-    height: 3.375rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-
-    &#previous {
-      left: -1.6875rem;
-      top: calc(50% - 1.6875rem);
-    }
-
-    &#next {
-      right: -1.6875rem;
-      top: calc(50% - 1.6875rem);
-    }
-  }
-
-  div#items {
-    display: flex;
-
-    overflow-x: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-  }
-`;
-
-export const CarouselItem = styled.div`
-  flex: none;
-  width: calc(33.33% - 1.25rem);
-  scroll-snap-align: start;
-
-  & + & {
-    margin-left: 1.875rem;
-  }
-
-  div {
-    border: 2px solid #000;
-    height: 300px;
-    background: gray;
   }
 `;

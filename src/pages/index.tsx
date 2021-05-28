@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { Carousel } from '../components/Carousel';
 
 import { TitledContent } from '../components/TitledContent';
 
@@ -8,21 +7,66 @@ import {
   Content,
   Header,
   SchoolContent,
-  CarouselWrapper,
-  CarouselItem,
 } from '../styles/pages/Home';
 
+const carouselVideoContent = [
+  {
+    id: 1,
+    source:
+      'https://i.ytimg.com/vi/g61dy6E8JNo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC14Va7AdxZjwC-liSCmxKkDQvgsA',
+    title: 'Movimento uniforme - time 9',
+  },
+  {
+    id: 2,
+    source:
+      'https://i.ytimg.com/vi/g61dy6E8JNo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC14Va7AdxZjwC-liSCmxKkDQvgsA',
+    title: 'Movimento uniforme - time 9',
+  },
+  {
+    id: 3,
+    source:
+      'https://i.ytimg.com/vi/g61dy6E8JNo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC14Va7AdxZjwC-liSCmxKkDQvgsA',
+    title: 'Movimento uniforme - time 9',
+  },
+  {
+    id: 4,
+    source:
+      'https://i.ytimg.com/vi/g61dy6E8JNo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC14Va7AdxZjwC-liSCmxKkDQvgsA',
+    title: 'Movimento uniforme - time 9',
+  },
+  {
+    id: 5,
+    source:
+      'https://i.ytimg.com/vi/g61dy6E8JNo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC14Va7AdxZjwC-liSCmxKkDQvgsA',
+    title: 'Movimento uniforme - time 9',
+  },
+  {
+    id: 6,
+    source:
+      'https://i.ytimg.com/vi/g61dy6E8JNo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC14Va7AdxZjwC-liSCmxKkDQvgsA',
+    title: 'Movimento uniforme - time 9',
+  },
+  {
+    id: 7,
+    source:
+      'https://i.ytimg.com/vi/g61dy6E8JNo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC14Va7AdxZjwC-liSCmxKkDQvgsA',
+    title: 'Movimento uniforme - time 9',
+  },
+  {
+    id: 8,
+    source:
+      'https://i.ytimg.com/vi/g61dy6E8JNo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC14Va7AdxZjwC-liSCmxKkDQvgsA',
+    title: 'Movimento uniforme - time 9',
+  },
+  {
+    id: 9,
+    source:
+      'https://i.ytimg.com/vi/g61dy6E8JNo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC14Va7AdxZjwC-liSCmxKkDQvgsA',
+    title: 'Movimento uniforme - time 9',
+  },
+];
+
 export default function Home(): JSX.Element {
-  const carouselRef = useRef<HTMLDivElement>(null);
-
-  function handleCarouselNext(): void {
-    carouselRef.current.scrollBy(400, 0);
-  }
-
-  function handleCarouselPrevious(): void {
-    carouselRef.current.scrollBy(-400, 0);
-  }
-
   return (
     <Container>
       <img src="robot.svg" alt="Robot" />
@@ -30,14 +74,14 @@ export default function Home(): JSX.Element {
         <Header>
           <img src="logo.jpg" alt="NAVE logo" />
           <nav>
-            <p>INICIO</p>
-            <p>PROJETOS</p>
-            <p>CONTEÚDOS</p>
-            <p>CONTATO</p>
+            <a href="#start">INICIO</a>
+            <a href="#projects">PROJETOS</a>
+            <a href="#contents">CONTEÚDOS</a>
+            <a href="#contact">CONTATO</a>
           </nav>
         </Header>
 
-        <SchoolContent>
+        <SchoolContent id="start">
           <main>
             <svg
               width="35"
@@ -63,6 +107,7 @@ export default function Home(): JSX.Element {
       </Content>
 
       <TitledContent
+        id="projects"
         title="Projetos"
         subtitle="E AULAS"
         containerStyle={{
@@ -71,41 +116,29 @@ export default function Home(): JSX.Element {
           paddingRight: '8.75rem',
         }}
       >
-        <CarouselWrapper>
-          <button type="button" id="previous" onClick={handleCarouselPrevious}>
-            <FiChevronLeft color="#fff" size={32} />
-          </button>
-          <div id="items" ref={carouselRef}>
-            <CarouselItem>
-              <div />
-            </CarouselItem>
-            <CarouselItem>
-              <div />
-            </CarouselItem>
-            <CarouselItem>
-              <div />
-            </CarouselItem>
-            <CarouselItem>
-              <div />
-            </CarouselItem>
-            <CarouselItem>
-              <div />
-            </CarouselItem>
-            <CarouselItem>
-              <div />
-            </CarouselItem>
-            <CarouselItem>
-              <div />
-            </CarouselItem>
-            <CarouselItem>
-              <div />
-            </CarouselItem>
-          </div>
-          <button type="button" id="next" onClick={handleCarouselNext}>
-            <FiChevronRight color="#fff" size={32} />
-          </button>
-        </CarouselWrapper>
+        <Carousel
+          controlColor="green"
+          content={carouselVideoContent}
+          type="video"
+        />
       </TitledContent>
+
+      {/* <TitledContent
+        id="contents"
+        title="Conteúdos vistos"
+        subtitle="EM SALA DE AULA"
+        containerStyle={{
+          marginTop: '11.875rem',
+          paddingLeft: '8.75rem',
+          paddingRight: '8.75rem',
+        }}
+      >
+        <Carousel
+          controlColor="green"
+          content={carouselVideoContent}
+          type="video"
+        />
+      </TitledContent> */}
     </Container>
   );
 }

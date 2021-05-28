@@ -3,6 +3,7 @@ import { CSSProperties } from 'styled-components';
 import { Container } from './styles';
 
 interface TitleContentProps {
+  id: string;
   title: string;
   subtitle: string;
   children: ReactNode;
@@ -10,13 +11,14 @@ interface TitleContentProps {
 }
 
 export function TitledContent({
+  id,
   title,
   subtitle,
   children,
   containerStyle = {},
 }: TitleContentProps): JSX.Element {
   return (
-    <Container style={containerStyle}>
+    <Container style={containerStyle} id={id}>
       <svg
         width="35"
         height="11"
