@@ -123,7 +123,7 @@ export default function Home(): JSX.Element {
         />
       </TitledContent>
 
-      {/* <TitledContent
+      <TitledContent
         id="contents"
         title="Conteúdos vistos"
         subtitle="EM SALA DE AULA"
@@ -134,11 +134,11 @@ export default function Home(): JSX.Element {
         }}
       >
         <Carousel
-          controlColor="green"
+          controlColor="white"
           content={carouselVideoContent}
           type="video"
         />
-      </TitledContent> */}
+      </TitledContent>
     </Container>
   );
 }
