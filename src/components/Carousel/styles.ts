@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { colors } from '../../styles/theme';
+import { colors, fonts } from '../../styles/theme';
 
 interface ContainerProps {
   controlColor: 'green' | 'white';
@@ -11,6 +11,7 @@ interface PaginationButtonProps {
 
 interface CarouselItemProps {
   background?: string;
+  type: 'video' | 'card';
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -63,40 +64,85 @@ export const Container = styled.div<ContainerProps>`
 
 export const CarouselItem = styled.div<CarouselItemProps>`
   flex: none;
-  width: calc(33.33% - 1.25rem);
   scroll-snap-align: start;
-  background: url(${props => props.background});
-  background-size: cover;
 
-  & + & {
-    margin-left: 1.875rem;
-  }
+  ${props =>
+    props.type === 'video' &&
+    css`
+      width: calc(33.33% - 2rem);
+      background: url(${props.background});
+      background-size: cover;
 
-  div {
-    opacity: 0;
-    height: 18.75rem;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.35) 0%,
-      rgba(0, 0, 0, 1) 100%
-    );
-    transition: opacity 0.3s;
+      & + & {
+        margin-left: 1.875rem;
+      }
 
-    display: flex;
-    align-items: flex-end;
-    padding: 2.875rem 0.875rem;
+      div {
+        opacity: 0;
+        height: 18.75rem;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.35) 0%,
+          rgba(0, 0, 0, 1) 100%
+        );
+        transition: opacity 0.3s;
 
-    &:hover {
-      opacity: 1;
-    }
+        display: flex;
+        align-items: flex-end;
+        padding: 2.875rem 0.875rem;
 
-    h1 {
-      font-family: Rubik;
-      font-size: 1.625rem;
-      font-weight: 700;
-      color: ${colors.background};
-    }
-  }
+        &:hover {
+          opacity: 1;
+        }
+
+        h1 {
+          font-family: Rubik;
+          font-size: 1.625rem;
+          font-weight: 700;
+          color: ${colors.background};
+        }
+      }
+    `}
+
+  ${props =>
+    props.type === 'card' &&
+    css`
+      background: ${colors.green.dark};
+      height: 20.625rem;
+      width: calc(20% - 2rem);
+      border-radius: 0.625rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & + & {
+        margin-left: 4rem;
+      }
+
+      div {
+        margin-top: 5.5rem;
+
+        h1 {
+          max-width: 12.5rem;
+          color: #fff;
+          ${fonts.card};
+        }
+      }
+
+      button {
+        margin-top: 3.125rem;
+        width: 13.375rem;
+        height: 2.1875rem;
+        color: ${colors.green.dark};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        ${fonts.button};
+        border: 0;
+        border-radius: 0.625rem;
+        background: #fff;
+      }
+    `}
 `;
 
 export const PaginationContainer = styled.footer`

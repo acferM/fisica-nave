@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { useState, useRef, useCallback } from 'react';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import { colors } from '../../styles/theme';
@@ -31,9 +32,14 @@ export function Carousel({
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const handleCarouselNext = useCallback(() => {
-    carouselRef.current.scrollBy(400, 0);
-    setCarouselPage(state => (state < 7 ? state + 1 : state));
-  }, []);
+    if (type === 'video') {
+      carouselRef.current.scrollBy(400, 0);
+      setCarouselPage(state => (state < 8 ? state + 1 : state));
+    } else {
+      carouselRef.current.scrollBy(200, 0);
+      setCarouselPage(state => (state < 9 ? state + 1 : state));
+    }
+  }, [type]);
 
   const handleCarouselPrevious = useCallback(() => {
     carouselRef.current.scrollBy(-400, 0);
@@ -45,18 +51,28 @@ export function Carousel({
       if (page === carouselPage) return;
 
       if (page < carouselPage) {
-        const distance = carouselPage - page + 1;
+        if (type === 'video') {
+          const distance = carouselPage - page + 1;
 
-        carouselRef.current.scrollBy(-400 * distance, 0);
-      } else {
+          carouselRef.current.scrollBy(-400 * distance, 0);
+        } else {
+          const distance = carouselPage - page + 1;
+
+          carouselRef.current.scrollBy(-250 * distance, 0);
+        }
+      } else if (type === 'video') {
         const distance = page - carouselPage + 1;
 
         carouselRef.current.scrollBy(400 * distance, 0);
+      } else {
+        const distance = page - carouselPage + 1;
+
+        carouselRef.current.scrollBy(250 * distance, 0);
       }
 
       setCarouselPage(page);
     },
-    [carouselPage]
+    [carouselPage, type]
   );
 
   return (
@@ -71,7 +87,7 @@ export function Carousel({
         {content.map((item, index) => {
           if (type === 'video') {
             return (
-              <CarouselItem key={item.id} background={item.source}>
+              <CarouselItem key={item.id} background={item.source} type={type}>
                 <div>
                   <h1>{item.title}</h1>
                 </div>
@@ -79,7 +95,30 @@ export function Carousel({
             );
           }
 
-          return 'penis ?';
+          return (
+            <CarouselItem key={`${index}-${item}`} type={type}>
+              <div>
+                <svg
+                  width="20"
+                  height="7"
+                  viewBox="0 0 20 7"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.851166"
+                    width="18.5116"
+                    height="7"
+                    rx="3.5"
+                    fill="#69D170"
+                  />
+                </svg>
+                <h1>{item}</h1>
+              </div>
+
+              <button type="button">CONFERIR CONTEÚDOS</button>
+            </CarouselItem>
+          );
         })}
       </div>
       <button type="button" id="next" onClick={handleCarouselNext}>
@@ -91,10 +130,20 @@ export function Carousel({
 
       <PaginationContainer>
         {content.map((item, index) => {
-          if (index + 1 < 8) {
+          if (type === 'video' && index + 1 < 9) {
             return (
               <PaginationButton
-                key={item.id}
+                key={index}
+                selected={carouselPage === index + 1}
+                type="button"
+                onClick={() => handleSelectCarouselPage(index + 1)}
+              />
+            );
+          }
+          if (type === 'card' && index + 1 < 10) {
+            return (
+              <PaginationButton
+                key={`-${index}-`}
                 selected={carouselPage === index + 1}
                 type="button"
                 onClick={() => handleSelectCarouselPage(index + 1)}

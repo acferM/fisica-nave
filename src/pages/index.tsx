@@ -1,13 +1,10 @@
 import { Carousel } from '../components/Carousel';
+import { ContactBar } from '../components/ContactBar';
+import { SchoolContent } from '../components/SchoolContent';
 
 import { TitledContent } from '../components/TitledContent';
 
-import {
-  Container,
-  Content,
-  Header,
-  SchoolContent,
-} from '../styles/pages/Home';
+import { Container, Content, Header } from '../styles/pages/Home';
 
 const carouselVideoContent = [
   {
@@ -66,6 +63,21 @@ const carouselVideoContent = [
   },
 ];
 
+const carouselCardContent = [
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+  'Estática dos\n flúidos',
+];
+
 export default function Home(): JSX.Element {
   return (
     <Container>
@@ -81,29 +93,7 @@ export default function Home(): JSX.Element {
           </nav>
         </Header>
 
-        <SchoolContent id="start">
-          <main>
-            <svg
-              width="35"
-              height="11"
-              viewBox="0 0 35 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect width="35" height="11" rx="5.5" fill="#009F0B" />
-            </svg>
-            <section>
-              <h1>Escola Técnica Estadual Cícero Dias</h1>
-              <h2>NAVE RECIFE</h2>
-              <div>
-                <button type="button">CONHEÇA O PROJETO NAVE</button>
-                <button type="button">TOUR VIRTUAL PELA ESCOLA</button>
-              </div>
-            </section>
-          </main>
-
-          <img src="group.jpg" alt="Group" />
-        </SchoolContent>
+        <SchoolContent id="start" />
       </Content>
 
       <TitledContent
@@ -135,10 +125,12 @@ export default function Home(): JSX.Element {
       >
         <Carousel
           controlColor="white"
-          content={carouselVideoContent}
-          type="video"
+          content={carouselCardContent}
+          type="card"
         />
       </TitledContent>
+
+      <ContactBar />
     </Container>
   );
 }

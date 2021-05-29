@@ -27,4 +27,10 @@ export const fonts = {
   font-family: Rubik;
   font-size: 0.875rem;
   `,
+  card: `
+  font-family: Raleway;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 2.625rem;
+  `,
 };
