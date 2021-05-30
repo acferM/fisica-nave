@@ -8,13 +8,13 @@ export function ContactBar(): JSX.Element {
         <span>SEGUE A GENTE!</span>
         <div>
           <a href="https://instagram.com">
-            <FiInstagram size={68} color="#fff" />
+            <FiInstagram color="#fff" />
           </a>
           <a href="https://facebook.com">
-            <FiFacebook size={68} color="#fff" />
+            <FiFacebook color="#fff" />
           </a>
           <a href="https://youtube.com">
-            <FiYoutube size={68} color="#fff" />
+            <FiYoutube color="#fff" />
           </a>
         </div>
       </LinksContainer>

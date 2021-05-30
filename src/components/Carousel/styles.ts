@@ -35,8 +35,8 @@ export const Container = styled.div<ContainerProps>`
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     border: 0;
     border-radius: 50%;
-    width: 3.375rem;
-    height: 3.375rem;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,11 +44,11 @@ export const Container = styled.div<ContainerProps>`
     top: calc(50% - 3.375rem);
 
     &#previous {
-      left: -1.6875rem;
+      left: -0.875rem;
     }
 
     &#next {
-      right: -1.6875rem;
+      right: -0.875rem;
     }
   }
 
@@ -79,7 +79,7 @@ export const CarouselItem = styled.div<CarouselItemProps>`
 
       div {
         opacity: 0;
-        height: 18.75rem;
+        height: 30rem;
         background: linear-gradient(
           180deg,
           rgba(0, 0, 0, 0.35) 0%,
@@ -101,6 +101,10 @@ export const CarouselItem = styled.div<CarouselItemProps>`
           font-weight: 700;
           color: ${colors.background};
         }
+      }
+
+      @media (max-width: 950px) {
+        width: 100%;
       }
     `}
 
@@ -142,6 +146,10 @@ export const CarouselItem = styled.div<CarouselItemProps>`
         border-radius: 0.625rem;
         background: #fff;
       }
+
+      @media (max-width: 950px) {
+        width: calc(33% - 2rem);
+      }
     `}
 `;
 
@@ -151,6 +159,10 @@ export const PaginationContainer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 950px) {
+    visibility: hidden;
+  }
 `;
 
 export const PaginationButton = styled.button<PaginationButtonProps>`

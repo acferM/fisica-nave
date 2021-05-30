@@ -96,16 +96,7 @@ export default function Home(): JSX.Element {
         <SchoolContent id="start" />
       </Content>
 
-      <TitledContent
-        id="projects"
-        title="Projetos"
-        subtitle="E AULAS"
-        containerStyle={{
-          marginTop: '11.875rem',
-          paddingLeft: '8.75rem',
-          paddingRight: '8.75rem',
-        }}
-      >
+      <TitledContent id="projects" title="Projetos" subtitle="E AULAS">
         <Carousel
           controlColor="green"
           content={carouselVideoContent}
@@ -117,11 +108,6 @@ export default function Home(): JSX.Element {
         id="contents"
         title="Conteúdos vistos"
         subtitle="EM SALA DE AULA"
-        containerStyle={{
-          marginTop: '11.875rem',
-          paddingLeft: '8.75rem',
-          paddingRight: '8.75rem',
-        }}
       >
         <Carousel
           controlColor="white"

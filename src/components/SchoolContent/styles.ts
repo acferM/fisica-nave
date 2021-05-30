@@ -63,18 +63,56 @@ export const Container = styled.div`
 
   @media (max-width: 1200px) {
     main {
-      max-width: 33.75rem;
+      max-width: 28rem;
 
-      h1 {
-        font-size: 3rem;
-      }
+      section {
+        h1 {
+          font-size: 2rem;
+        }
 
-      div {
-        button {
-          font-size: 0.75rem;
-          width: 15rem;
+        div {
+          button {
+            font-size: 0.75rem;
+            width: 13rem;
+          }
         }
       }
+    }
+  }
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+
+    main {
+      max-width: 100%;
+
+      section {
+        h1 {
+          max-width: 80%;
+          font-size: 4rem;
+        }
+
+        div {
+          justify-content: flex-start;
+
+          button {
+            width: 15rem;
+            font-size: 1rem;
+
+            & + button {
+              margin-left: 2rem;
+            }
+          }
+        }
+      }
+    }
+
+    img {
+      margin-top: 4.28rem;
+      max-width: 100%;
+      width: 100%;
     }
   }
 `;

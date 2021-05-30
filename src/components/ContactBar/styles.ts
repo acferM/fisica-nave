@@ -10,6 +10,10 @@ export const Container = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 950px) {
+    padding: 0 1rem;
+  }
 `;
 
 export const LinksContainer = styled.div`
@@ -24,6 +28,21 @@ export const LinksContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  @media (max-width: 950px) {
+    span {
+      font-size: 2rem;
+    }
+
+    div {
+      a {
+        svg {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
   }
 `;
 
