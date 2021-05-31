@@ -14,6 +14,11 @@ export const Container = styled.footer`
   @media (max-width: 950px) {
     padding: 0 1rem;
   }
+
+  @media (max-width: 620px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const LinksContainer = styled.div`
@@ -28,11 +33,33 @@ export const LinksContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    a {
+      svg {
+        width: 4.25rem;
+        height: 4.25rem;
+      }
+    }
   }
 
   @media (max-width: 950px) {
     span {
       font-size: 2rem;
+    }
+
+    div {
+      a {
+        svg {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 620px) {
+    span {
+      font-size: 1.625rem;
     }
 
     div {
@@ -53,5 +80,10 @@ export const EmailContainer = styled.div`
   p {
     font-weight: 400;
     text-align: center;
+  }
+
+  @media (max-width: 620px) {
+    font-size: 1.4rem;
+    margin-top: 3rem;
   }
 `;

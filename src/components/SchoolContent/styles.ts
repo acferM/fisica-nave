@@ -115,4 +115,14 @@ export const Container = styled.div`
       width: 100%;
     }
   }
+
+  @media (max-width: 730px) {
+    main {
+      section {
+        h1 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
 `;

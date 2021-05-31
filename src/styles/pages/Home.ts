@@ -8,6 +8,12 @@ export const Container = styled.div`
     left: 0;
     z-index: -1;
   }
+
+  @media (max-width: 620px) {
+    > img {
+      width: 90%;
+    }
+  }
 `;
 
 export const Content = styled.div`
@@ -79,6 +85,27 @@ export const Header = styled.header`
 
       a {
         font-size: 0.975rem;
+      }
+    }
+  }
+
+  @media (max-width: 1220px) {
+    padding-right: 1.5rem;
+
+    nav {
+      max-width: 24rem;
+    }
+  }
+
+  @media (max-width: 620px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    nav {
+      margin-top: 2rem;
+
+      a {
+        font-size: 1.2rem;
       }
     }
   }

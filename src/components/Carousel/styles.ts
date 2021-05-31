@@ -79,7 +79,7 @@ export const CarouselItem = styled.div<CarouselItemProps>`
 
       div {
         opacity: 0;
-        height: 30rem;
+        height: 20rem;
         background: linear-gradient(
           180deg,
           rgba(0, 0, 0, 0.35) 0%,
@@ -149,6 +149,22 @@ export const CarouselItem = styled.div<CarouselItemProps>`
 
       @media (max-width: 950px) {
         width: calc(33% - 2rem);
+      }
+
+      @media (max-width: 730px) {
+        div {
+          h1 {
+            font-size: 1.75rem;
+          }
+        }
+
+        button {
+          width: 12rem;
+        }
+      }
+
+      @media (max-width: 620px) {
+        width: calc(50% - 2rem);
       }
     `}
 `;
