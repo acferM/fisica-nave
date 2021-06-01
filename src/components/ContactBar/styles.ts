@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { colors, fonts } from '../../styles/theme';
 
 export const Container = styled.footer`
+  font-size: 1.3rem;
   margin-top: 11.875rem;
   padding: 0 8.75rem;
-  height: 18.75rem;
+  height: 14.375rem;
   width: 100%;
   background: ${colors.green.dark};
   display: flex;
@@ -24,7 +25,6 @@ export const Container = styled.footer`
 export const LinksContainer = styled.div`
   span {
     font-family: Rubik;
-    font-size: 2.8125rem;
     color: #fff;
   }
 
@@ -36,8 +36,8 @@ export const LinksContainer = styled.div`
 
     a {
       svg {
-        width: 4.25rem;
-        height: 4.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
       }
     }
   }
@@ -65,8 +65,8 @@ export const LinksContainer = styled.div`
     div {
       a {
         svg {
-          width: 3rem;
-          height: 3rem;
+          width: 3.25rem;
+          height: 3.25rem;
         }
       }
     }
@@ -75,6 +75,7 @@ export const LinksContainer = styled.div`
 
 export const EmailContainer = styled.div`
   ${fonts.subtitle}
+  font-size: 1.3rem;
   color: #fff;
 
   p {

@@ -36,4 +36,18 @@ export default createGlobalStyle`
     cursor: pointer;
     ${fonts.button}
   }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #DBDBDB;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${colors.green.dark};
+    border-radius: 10px;
+    height: 60px;
+  }
 `;

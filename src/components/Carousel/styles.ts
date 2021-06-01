@@ -147,7 +147,11 @@ export const CarouselItem = styled.div<CarouselItemProps>`
         background: #fff;
       }
 
-      @media (max-width: 950px) {
+      @media (max-width: 1530px) {
+        width: calc(25% - 2rem);
+      }
+
+      @media (max-width: 1280px) {
         width: calc(33% - 2rem);
       }
 

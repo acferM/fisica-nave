@@ -39,7 +39,7 @@ export const Container = styled.div`
         &:nth-child(2) {
           border: 2px solid ${colors.green.dark};
           color: ${colors.green.dark};
-          background: transparent;
+          background: ${colors.background};
         }
       }
     }
